@@ -1,12 +1,12 @@
 # Data-Preprocessing
 Clean your dataset
 
-# First step 
+## First step 
 you should install pipenv => pip install pipenv
 and after => pipenv install : to install dependecies indicated in pipfile
 
-# Second step
+## Second step
 install dependecies indicated in pipfile => pipenv install 
 
-# Finally
+## Finally
 Start application from server.py
