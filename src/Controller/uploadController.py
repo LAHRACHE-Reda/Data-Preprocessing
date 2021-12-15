@@ -12,7 +12,9 @@ location = app.config['UPLOAD_PATH']+"/*.csv"
 
 @app.route('/')
 def concatfiles():
-    return up.concatenate(location).head().to_json(orient="split")
+    df = up.concatenate(location)
+    up.createTable(df)
+    return "creation de table effectuee"
 
 
 @app.route("/upload", methods=["POST"])

@@ -4,6 +4,8 @@ import os
 from flask import request
 from src import app
 
+import sqlite3
+
 
 # location = "../MachineLearningCSV/MachineLearningCVE/*.csv"
 
@@ -23,3 +25,11 @@ def concatenate(location):
 def upload_csv():
     for f in request.files.getlist('file_name'):
         f.save(os.path.join(app.config['UPLOAD_PATH'], f.filename))
+
+
+# create table from dataframe
+def createTable(df):
+    conn = sqlite3.connect('dbpreprocessing.db')
+    df.to_sql("datasetTable", conn, if_exists="replace")
+    conn.commit()
+    conn.close()
