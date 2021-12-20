@@ -1,10 +1,9 @@
-import pandas as pd
 import glob
 import os
+import pandas as pd
 from flask import request
 from src import app
-
-import sqlite3
+from src.dbConnection import db_connection
 
 
 # location = "../MachineLearningCSV/MachineLearningCVE/*.csv"
@@ -13,12 +12,12 @@ import sqlite3
 # concatenate all files and return dataframe
 def concatenate(location):
     excel_files = glob.glob(location)
-    dataset = pd.DataFrame()
+    app.config['dataset'] = pd.DataFrame()
     # Concatenate files
     for excel_file in excel_files:
         dataset2 = pd.read_csv(excel_file, low_memory=False)
-        dataset = pd.concat([dataset, dataset2])
-    return dataset
+        app.config['dataset'] = pd.concat([app.config['dataset'], dataset2])
+    return app.config['dataset']
 
 
 # upload file to csvFiles folder
@@ -28,8 +27,8 @@ def upload_csv():
 
 
 # create table from dataframe
-def createTable(df):
-    conn = sqlite3.connect('dbpreprocessing.db')
-    df.to_sql("datasetTable", conn, if_exists="replace")
-    conn.commit()
-    conn.close()
+# def createtable(df):
+#     conn = db_connection()
+#     df.to_sql("datasetTable", conn, if_exists="replace")
+#     conn.commit()
+#     conn.close()

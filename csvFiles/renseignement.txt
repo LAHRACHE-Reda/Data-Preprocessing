@@ -1,1 +1,0 @@
-this directory will stock csv files (like a staging area -> database)
