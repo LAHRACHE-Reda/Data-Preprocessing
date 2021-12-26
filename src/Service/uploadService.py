@@ -22,7 +22,7 @@ def concatenate(location):
 
 # upload file to csvFiles folder
 def upload_csv():
-    for f in request.files.getlist('file_name'):
+    for f in request.files.getlist('fileName'):
         f.save(os.path.join(app.config['UPLOAD_PATH'], f.filename))
 
 
