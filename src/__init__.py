@@ -12,3 +12,4 @@ app.config['dataset'] = pd.DataFrame()
 # Déclaration des controllers
 import src.Controller.uploadController
 import src.Controller.nettoyageController
+import src.Controller.dashboardController
