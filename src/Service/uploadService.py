@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from flask import request
 from src import app
-from src.dbConnection import db_connection
+#from src.dbConnection import db_connection
 
 
 # location = "../MachineLearningCSV/MachineLearningCVE/*.csv"
@@ -22,7 +22,7 @@ def concatenate(location):
 
 # upload file to csvFiles folder
 def upload_csv():
-    for f in request.files.getlist('file_name'):
+    for f in request.files.getlist('fileName'):
         f.save(os.path.join(app.config['UPLOAD_PATH'], f.filename))
 
 
