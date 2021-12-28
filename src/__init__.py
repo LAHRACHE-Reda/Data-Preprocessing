@@ -9,7 +9,6 @@ CORS(app)
 app.config['UPLOAD_PATH'] = "./csvFiles"
 app.config['dataset'] = pd.DataFrame()
 
-
 # Déclaration des controllers
 import src.Controller.uploadController
 import src.Controller.nettoyageController

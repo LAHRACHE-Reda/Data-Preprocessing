@@ -28,4 +28,4 @@ def uploadfiles():
     up.upload_csv()
     app.config['dataset'] = up.concatenate(location)
     # up.createTable(dataset)  # Create table from csv files
-    return app.config['dataset'].head(10).to_json()    # return 5 row
+    return app.config['dataset'].head(10).to_json(orient='records')    # return 5 row
