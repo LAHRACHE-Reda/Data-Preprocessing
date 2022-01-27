@@ -15,7 +15,7 @@ def drop_null():
     net.drop_null_values()
     return {"total": int(total_deleted)}   # return total deleted null rows
 
-<<<<<<< HEAD
+
 #showing infinit values
 @app.route('/infinit_values')
 def infinit_values():
@@ -27,7 +27,7 @@ def drop_infinit():
     nbrDeletedRows = net.drop_infinit_values()
     print(nbrDeletedRows, file=sys.stderr)
     return {"total": int(nbrDeletedRows)}
-=======
+
 #------Valeurs doublons-----
 @app.route('/duplicate_values')
 def duplicate_values():
@@ -39,4 +39,4 @@ def drop_duplicate():
     totalDupl=app.config['dataset'].duplicated().sum()
     net.drop_duplicate_values()
     return {"totalDupl": int(totalDupl)}
->>>>>>> 547f5ff8248f652b6b391f003d012f7ad2d3e26c
+
