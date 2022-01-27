@@ -16,7 +16,7 @@ def drop_null_values():
     app.config['dataset'].dropna(inplace=True)
 
 
-<<<<<<< HEAD
+
 #Identify the infinit values
 def indentify_infinit_values():
     return app.config['dataset'][app.config['dataset'].isin([np.inf, -np.inf]).any(axis=1)]
@@ -30,7 +30,7 @@ def drop_infinit_values():
     for i in indices_list:
         app.config['dataset'].drop(index=i, inplace=True)
     return len(indices_list)
-=======
+
 #------Valeurs doublons-----
 
 def identify_duplicate_values():
@@ -41,5 +41,4 @@ def drop_duplicate_values():
 
 
 
->>>>>>> 547f5ff8248f652b6b391f003d012f7ad2d3e26c
 
